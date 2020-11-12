@@ -1,36 +1,38 @@
-<?php
-
-class А{
-    
+<?php 
+Class A {
+	public function equation ($a,$b) {
+		if ($a == 0){
+		  return false;
+		}
+		return $this->X=-($b/$a);
+	}
+	protected $X;
 }
-
-class B extends A
-{
-    public function __construct($b)
-    {
-        $this->b = $b;
-        
-    }
-    
-    protected $b;  
+Class B extends A {
+    protected function diskriminant($a, $b, $c) {
+		$x = ($b**2)-4*$a*$c;
+		return $x;
+	}
+	public function qu_equation($a, $b, $c){
+		$d = $this->diskriminant($a,$b,$c);
+		if($a == 0){
+			return $this->equation($b,$c);
+		}
+		if ($d > 0) {
+			return $this->X=array (
+				-($b+sqrt($d)/(2*$a)),
+				-($b-sqrt($d)/(2*$a))
+			);
+		}
+		
+		if ($d == 0) {
+			return $this->X=array(-($b/(2*$a)));
+		}
+		return $this->X=false;
+	}
 }
-
-
-class C extends B
-{
-    public function __construct($b,$c)
-    {
-        $this->c = $c;
-        parent::__construct($b);
-    }
-    protected $c;
-    
-}
-
-$a1 = new A ();
-$b2 = new B ($b4);
-$b3 = new B ($a1);
-$b4 = new B ($a1);
-$c5 = new C ($b2,$b3);
-
-?>
+	$a = new A();
+	$b = new B();
+	
+	?>
+			
