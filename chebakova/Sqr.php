@@ -1,6 +1,10 @@
 <?php
 
-Class Sqr extends Line
+namespace chebakova;
+
+use core\EquationInterface;
+
+class Sqr extends Line implements EquationInterface
 {
     protected function dis($a, $b, $c)
     {
@@ -8,24 +12,21 @@ Class Sqr extends Line
         return $x;
     }
 
-    public function qu_solve($a, $b, $c)
+    public function solve($a, $b, $c)
     {
-        $d = $this->dis($a, $b, $c);
+        $x = $this->equation($b, $c);
         if ($a == 0) {
-            return $this->solve($b, $c);
+            return [$this->equation($b, $c)];
         }
-        if ($d > 0) {
+        if ($x > 0) {
             return $this->X = array(
-                -($b + sqrt($d) / (2 * $a)),
-                -($b - sqrt($d) / (2 * $a))
+                -($b + sqrt($x) / 2 * $a),
+                -($b - sqrt($x) / 2 * $a)
             );
         }
-
-        if ($d == 0) {
+        if ($x == 0) {
             return $this->X = array(-($b / (2 * $a)));
         }
-        return $this->X = NULL;
+        throw new ChebakovaException("Ошибка: уравнение не имеет корней.");
     }
 }
-
-?>

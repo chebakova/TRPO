@@ -1,11 +1,15 @@
 <?php
 
-Class Line
+namespace chebakova;
+
+
+class Line
 {
-    public function solve($a, $b)
+    public function equation($a, $b)
     {
         if ($a == 0) {
-            return NULL;
+            throw new ChebakovaException("Ошибка: уравнения не существует.");
+
         }
         return $this->X = -($b / $a);
     }
@@ -13,4 +17,3 @@ Class Line
     protected $X;
 }
 
-?>
