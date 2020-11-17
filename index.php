@@ -16,6 +16,8 @@ error_reporting (-1);
 $b = new \chebakova\Sqr();
 
 try{
+    $version = file_get_context("version.txt");
+    MyLog::log("Версия программы ".$version);
 
     $values = array();
 
