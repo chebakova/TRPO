@@ -1,14 +1,10 @@
 <?php
 
 use chebakova\ChebakovaException;
+use chebakova\MyLog;
+use chebakova\Sqr;
 
-include "core/EquationInterface.php";
-include "core/LogAbstract.php";
-include "core/LogInterface.php";
-include "chebakova/MyLog.php";
-include "chebakova/Line.php";
-include "chebakova/Sqr.php";
-include "chebakova/ChebakovaException.php";
+require __DIR__ . '/vendor/autoload.php';
 
 ini_set("display_errors", 1);
 error_reporting (-1);
@@ -16,7 +12,7 @@ error_reporting (-1);
 $b = new \chebakova\Sqr();
 
 try{
-    $version = file_get_context("version.txt");
+    $version =  file_get_contents("version");
     MyLog::log("Версия программы ".$version);
 
     $values = array();

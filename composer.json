@@ -1,0 +1,25 @@
+{
+    "name": "chebakova/trpo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "chebakova",
+            "email": "chebakova_k@inbox.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rok9ru/trpo-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/chebakova/chebakova.git"
+        }
+    ],
+    "require": {
+        "rok9ru/trpo-core":"^2.0",
+        "chebakova/chebakova":"^1.0"
+    }
+}
